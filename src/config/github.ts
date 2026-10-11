@@ -16,7 +16,7 @@ export const PORTFOLIO_CONFIG = {
   title: "Senior Full-Stack & Frontend Engineer",
   tagline: "Building resilient web applications, modern interfaces, and scalable cloud architectures.",
   bio: "Passionate developer specializing in React, TypeScript, Next.js, and modern distributed web systems. I turn complex logic into intuitive, high-performance user experiences.",
-  location: "London, UK",
+  location: "Morocco",
   status: "Available for new projects & opportunities",
   email: "saadiyahya4012@gmail.com",
   socials: {

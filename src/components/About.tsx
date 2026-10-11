@@ -1,11 +1,13 @@
 import React from 'react';
 import { User, Cpu, Sparkles, CheckCircle2, Award, Zap, Code } from 'lucide-react';
 import { PORTFOLIO_CONFIG, GITHUB_USERNAME } from '../config/github';
+import { SectionGlow } from './AnimatedBackground';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section id="about" className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+      <SectionGlow variant="about" />
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left Column: Bio & Story */}
         <div className="lg:col-span-7 space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-950/60 border border-indigo-800/50 text-indigo-400">

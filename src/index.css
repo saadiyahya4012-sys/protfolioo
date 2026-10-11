@@ -31,3 +31,65 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #3f3f46;
 }
+
+/* ---- Futuristic floating background animations (transform/opacity only) ---- */
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+@keyframes float-x-soft {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(28px, -18px); }
+}
+
+@keyframes float-y-soft {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-18px, 24px); }
+}
+
+@keyframes drift-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40px, -30px) scale(1.05); }
+  66% { transform: translate(-30px, 25px) scale(0.97); }
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes twinkle-soft {
+  0%, 100% { opacity: 0.25; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes glow-pulse-soft {
+  0%, 100% { opacity: 0.65; }
+  50% { opacity: 1; }
+}
+
+.animate-float { animation: float-soft 8s ease-in-out infinite; will-change: transform; }
+.animate-float-x { animation: float-x-soft 10s ease-in-out infinite; will-change: transform; }
+.animate-float-y { animation: float-y-soft 11s ease-in-out infinite; will-change: transform; }
+.animate-drift { animation: drift-slow 22s ease-in-out infinite; will-change: transform; }
+.animate-spin-slow { animation: spin-slow 24s linear infinite; will-change: transform; }
+.animate-spin-slower { animation: spin-slow 36s linear infinite; will-change: transform; }
+.animate-spin-reverse { animation: spin-reverse 30s linear infinite; will-change: transform; }
+.animate-twinkle { animation: twinkle-soft 3s ease-in-out infinite; will-change: transform, opacity; }
+.animate-glow-pulse { animation: glow-pulse-soft 4.5s ease-in-out infinite; will-change: opacity; }
+.animate-orbit { animation: spin-slow 14s linear infinite; will-change: transform; }
+.animate-orbit-reverse { animation: spin-reverse 20s linear infinite; will-change: transform; }
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

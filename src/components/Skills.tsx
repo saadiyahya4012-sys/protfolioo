@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Layers, CheckCircle2, Code, Database, Server, Wrench } from 'lucide-react';
 import { PORTFOLIO_CONFIG } from '../config/github';
+import { SectionGlow } from './AnimatedBackground';
 
 export const Skills: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'all' | 'frontend' | 'backend' | 'devops' | 'tools'>('all');
@@ -41,9 +42,10 @@ export const Skills: React.FC = () => {
     : categories.filter((c) => c.id === activeTab);
 
   return (
-    <section id="skills" className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="skills" className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+      <SectionGlow variant="skills" />
       {/* Header */}
-      <div className="text-center max-w-2xl mx-auto mb-12">
+      <div className="relative z-10 text-center max-w-2xl mx-auto mb-12">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-cyan-950/60 border border-cyan-800/50 text-cyan-400 mb-3">
           <Layers className="w-3.5 h-3.5" />
           <span>Core Capabilities</span>
@@ -84,7 +86,7 @@ export const Skills: React.FC = () => {
       </div>
 
       {/* Skills Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6">
         {displayedCategories.map((cat) => {
           const Icon = cat.icon;
           return (

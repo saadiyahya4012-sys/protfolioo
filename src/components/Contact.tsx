@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Mail, Send, CheckCircle2, MessageSquare, MapPin, Github, Linkedin, Loader2 } from 'lucide-react';
 import { PORTFOLIO_CONFIG, GITHUB_USERNAME } from '../config/github';
+import { SectionGlow } from './AnimatedBackground';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -123,8 +124,9 @@ export const Contact: React.FC = () => {
     hasError ? 'border-rose-700 focus:border-rose-500' : 'border-zinc-800';
 
   return (
-    <section id="contact" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="text-center max-w-2xl mx-auto mb-16">
+    <section id="contact" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+      <SectionGlow variant="contact" />
+      <div className="relative z-10 text-center max-w-2xl mx-auto mb-16">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-cyan-950/60 border border-cyan-800/50 text-cyan-400 mb-3">
           <MessageSquare className="w-3.5 h-3.5" />
           <span>Get in Touch</span>

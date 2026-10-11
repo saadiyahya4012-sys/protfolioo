@@ -19,6 +19,7 @@ import { GitHubRepository, GitHubRateLimitInfo } from '../types/github';
 import { fetchGitHubRepositories, formatRepoDate } from '../services/githubApi';
 import { GITHUB_USERNAME } from '../config/github';
 import { ProjectCard } from './ProjectCard';
+import { SectionGlow } from './AnimatedBackground';
 
 interface ProjectsProps {
   onOpenGuideModal?: () => void;
@@ -168,7 +169,8 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenGuideModal }) => {
   }, [repositories]);
 
   return (
-    <section id="projects" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="projects" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+      <SectionGlow variant="projects" />
       {/* Background radial accent */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-3xl pointer-events-none -z-10" />
 
