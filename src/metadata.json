@@ -1,0 +1,6 @@
+{
+  "name": "DevPortfolio - Automated GitHub Projects Portfolio",
+  "description": "Modern premium dark developer portfolio with automatic GitHub repository sync, live Vercel demo detection, and dynamic project filtering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
